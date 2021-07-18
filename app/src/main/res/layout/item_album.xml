@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <data>
+    <variable
+      name="albumModel"
+      type="rio.arj.kumparantechtestrioarjuna.data.repository.album.model.AlbumResponseItem" />
+  </data>
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/image_album"
+      android:layout_width="0dp"
+      android:layout_height="150dp"
+      android:alpha="0.6"
+      android:background="@color/solid_pink_903749"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_title"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:ellipsize="end"
+      android:gravity="center_vertical|center_horizontal"
+      android:maxLines="2"
+      android:padding="16dp"
+      android:text="@{albumModel.title}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textColor="@color/black"
+      android:textStyle="bold|italic"
+      app:layout_constraintBottom_toTopOf="@id/button_more"
+      app:layout_constraintEnd_toEndOf="@id/image_album"
+      app:layout_constraintStart_toStartOf="@id/image_album"
+      app:layout_constraintTop_toTopOf="@id/image_album"
+      tools:text="@tools:sample/lorem/random" />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/button_more"
+      style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="16dp"
+      android:text="More Photos"
+      android:textAllCaps="false"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toBottomOf="@id/image_album"
+      app:layout_constraintEnd_toEndOf="@id/image_album"
+      app:layout_constraintStart_toStartOf="@id/image_album"
+      app:layout_constraintTop_toBottomOf="@id/text_title"
+      app:strokeColor="@color/white"
+      app:strokeWidth="1dp" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+  <data>
+
+    <variable
+      name="model"
+      type="rio.arj.kumparantechtestrioarjuna.data.repository.posts.model.PostDetail" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_name"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:drawableStart="@drawable/ic_name"
+      android:drawablePadding="16dp"
+      android:ellipsize="end"
+      android:padding="16dp"
+      android:singleLine="true"
+      android:text="@{model.name}"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="@tools:sample/lorem/random" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_company_name"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:drawableStart="@drawable/ic_company"
+      android:drawablePadding="16dp"
+      android:ellipsize="end"
+      android:padding="16dp"
+      android:singleLine="true"
+      android:text="@{model.companyName}"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_name"
+      tools:text="@tools:sample/lorem/random" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_title"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:drawableStart="@drawable/ic_title"
+      android:drawablePadding="16dp"
+      android:ellipsize="end"
+      android:maxLines="2"
+      android:padding="16dp"
+      android:text="@{model.title}"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_company_name"
+      tools:text="@tools:sample/lorem/random" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_body"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:drawableStart="@drawable/ic_body"
+      android:drawablePadding="16dp"
+      android:ellipsize="end"
+      android:maxLines="6"
+      android:padding="16dp"
+      android:text="@{model.body}"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_title"
+      tools:text="@tools:sample/lorem/random" />
+
+    <View
+      android:id="@+id/divider"
+      android:layout_width="0dp"
+      android:layout_height="1dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:background="@android:color/darker_gray"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_body" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

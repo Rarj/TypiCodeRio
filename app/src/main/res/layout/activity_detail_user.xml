@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <data>
+    <variable
+      name="userDetail"
+      type="rio.arj.kumparantechtestrioarjuna.data.repository.users.model.detail.UserDetailResponse" />
+    <variable
+      name="viewModel"
+      type="rio.arj.kumparantechtestrioarjuna.ui.detailuser.DetailUserViewModel" />
+  </data>
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detailuser.DetailUserActivity">
+
+    <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:background="@color/martinique_2b2e4a"
+      app:contentInsetStartWithNavigation="0dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:navigationIcon="@drawable/ic_back"
+      app:title="@{userDetail.username}"
+      app:titleTextColor="@color/white"
+      tools:title="@tools:sample/lorem" />
+
+    <androidx.core.widget.NestedScrollView
+      android:id="@+id/container_detail"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_email_label"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:paddingStart="16dp"
+          android:paddingTop="16dp"
+          android:paddingEnd="16dp"
+          android:text="Email"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_email"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableStart="@drawable/ic_email"
+          android:drawablePadding="16dp"
+          android:ellipsize="end"
+          android:maxLines="2"
+          android:padding="16dp"
+          android:text="@{userDetail.email}"
+          android:textColor="@color/black"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/text_email_label"
+          tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_address_label"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:paddingStart="16dp"
+          android:paddingTop="16dp"
+          android:paddingEnd="16dp"
+          android:text="Address"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/text_email" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_address_street"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableStart="@drawable/ic_location"
+          android:drawablePadding="16dp"
+          android:ellipsize="end"
+          android:maxLines="2"
+          android:padding="16dp"
+          android:text="@{userDetail.address.street}"
+          android:textColor="@color/black"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/text_address_label"
+          tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_address_zip_code"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableStart="@drawable/ic_zip_code"
+          android:drawablePadding="16dp"
+          android:ellipsize="end"
+          android:maxLines="2"
+          android:padding="16dp"
+          android:text="@{userDetail.address.zipcode}"
+          android:textColor="@color/black"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/text_address_street"
+          tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_address_suite"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableStart="@drawable/ic_suite"
+          android:drawablePadding="16dp"
+          android:ellipsize="end"
+          android:maxLines="2"
+          android:padding="16dp"
+          android:text="@{userDetail.address.suite}"
+          android:textColor="@color/black"
+          app:layout_constraintEnd_toStartOf="@id/text_address_city"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/text_address_zip_code"
+          tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_address_city"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableStart="@drawable/ic_city"
+          android:drawablePadding="16dp"
+          android:ellipsize="end"
+          android:maxLines="2"
+          android:padding="16dp"
+          android:text="@{userDetail.address.city}"
+          android:textColor="@color/black"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@id/text_address_suite"
+          app:layout_constraintTop_toBottomOf="@id/text_address_zip_code"
+          tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_company_label"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:paddingStart="16dp"
+          android:paddingTop="16dp"
+          android:paddingEnd="16dp"
+          android:text="Company"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/text_address_suite" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_company_name"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:drawableStart="@drawable/ic_company"
+          android:drawablePadding="16dp"
+          android:ellipsize="end"
+          android:maxLines="2"
+          android:padding="16dp"
+          android:text="@{userDetail.company.name}"
+          android:textColor="@color/black"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/text_company_label"
+          tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/text_albums_label"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:paddingStart="16dp"
+          android:paddingTop="16dp"
+          android:paddingEnd="16dp"
+          android:text="Albums"
+          android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/text_company_name" />
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recycler_albums"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/text_albums_label"
+          tools:listitem="@layout/item_album" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

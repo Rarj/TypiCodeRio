@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+  <data>
+    <variable
+      name="commentModel"
+      type="rio.arj.kumparantechtestrioarjuna.data.repository.comment.model.CommentResponseItem" />
+  </data>
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_comment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_author_name"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:drawableStart="@drawable/ic_author"
+      android:drawablePadding="16dp"
+      android:ellipsize="end"
+      android:gravity="center_vertical"
+      android:padding="16dp"
+      android:singleLine="true"
+      android:text="@{commentModel.name}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      android:textColor="@color/black"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@id/text_body"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0"
+      app:layout_constraintVertical_chainStyle="packed"
+      tools:text="@tools:sample/lorem" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/text_body"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:padding="16dp"
+      android:text="@{commentModel.body}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Small"
+      android:textColor="@color/black"
+      app:layout_constraintBottom_toTopOf="@id/divider"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_author_name"
+      tools:text="@tools:sample/lorem" />
+
+    <View
+      android:id="@+id/divider"
+      android:layout_width="0dp"
+      android:layout_height="1dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:background="@android:color/darker_gray"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/text_body" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
